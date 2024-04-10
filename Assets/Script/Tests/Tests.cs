@@ -14,4 +14,5 @@ public class Tests
         five.times(2);
         Assert.AreEqual(10, five.amount);
     }
+
 }
