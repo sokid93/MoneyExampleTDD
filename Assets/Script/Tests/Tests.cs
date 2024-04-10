@@ -20,7 +20,7 @@ public class Tests
     [Test]
     public void TestEquality()
     {
-        Assert.IsTrue(new Dollar(5).Equals(new Dollar(5)));
-        Assert.IsFalse(new Dollar(5).Equals(new Dollar(6)));
+        Assert.IsTrue(new Dollar(5).equals(new Dollar(5)));
+        Assert.IsFalse(new Dollar(5).equals(new Dollar(6)));
     }
 }

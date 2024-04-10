@@ -16,9 +16,10 @@ namespace Modelo
             return new Dollar(amount * multiplier);
         }
 
-        public bool equals(Object obj)
+        public bool equals(Dollar obj)
         {
-            return true;
+            Dollar dollar = (Dollar) obj;
+            return amount == dollar.amount;
         }
     }
 }
