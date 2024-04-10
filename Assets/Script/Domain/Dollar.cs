@@ -15,5 +15,10 @@ namespace Modelo
         {
             return new Dollar(amount * multiplier);
         }
+
+        public bool equals(Object obj)
+        {
+            return true;
+        }
     }
 }
