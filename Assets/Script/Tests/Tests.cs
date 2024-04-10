@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
-using Modelo;
 
 public class Tests
 {
@@ -20,5 +19,13 @@ public class Tests
     {
         Assert.IsTrue(new Dollar(5).equals(new Dollar(5)));
         Assert.IsFalse(new Dollar(5).equals(new Dollar(6)));
+    }
+
+    [Test]
+    public void TestFrancMultiplication()
+    {
+        Franc five = new Franc(5);
+        Assert.AreEqual(new Franc(10), five.times(2));
+        Assert.AreEqual(new Franc(15), five.times(3));
     }
 }
