@@ -14,7 +14,7 @@ public class Franc
         return new Franc(amount * multiplier);
     }
 
-    public bool equals(Franc obj)
+    override public bool Equals(object obj)
     {
         Franc franc = (Franc) obj;
         return amount == franc.amount;
