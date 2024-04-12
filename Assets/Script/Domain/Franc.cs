@@ -2,22 +2,16 @@ using System;
 
 public class Franc : Money
 {
-    private String _currency;
+    private new string _currency;
 
-    public Franc(int amount)
+    public Franc(int amount, string currency): base(amount, currency)
     {
-        this.amount = amount;
-        _currency = "CHF";
+        
     }
 
     override public Money times(int multiplier)
     {
-        return new Franc(amount * multiplier);
-    }
-
-    public override string currency()
-    {
-        return _currency;
+        return Money.franc(amount * multiplier);
     }
 }
 

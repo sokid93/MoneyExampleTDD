@@ -2,22 +2,16 @@ using System;
 
 public class Dollar : Money
 {
-    private String _currency;
+    private new string _currency;
 
-    public Dollar(int amount)
+    public Dollar(int amount, string currency) : base(amount, currency)
     {
-        this.amount = amount;
-        _currency = "USD";
+
     }
 
     override public Money times(int multiplier)
     {
-        return new Dollar(amount * multiplier);
-    }
-
-    public override string currency()
-    {
-        return _currency;
+        return Money.dollar(amount * multiplier);
     }
 }
 
