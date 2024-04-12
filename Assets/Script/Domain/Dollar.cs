@@ -11,5 +11,10 @@ public class Dollar : Money
     {
         return new Dollar(amount * multiplier);
     }
+
+    public override string currency()
+    {
+        return "USD";
+    }
 }
 
