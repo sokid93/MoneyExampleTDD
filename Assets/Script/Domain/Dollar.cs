@@ -8,10 +8,5 @@ public class Dollar : Money
     {
 
     }
-
-    override public Money times(int multiplier)
-    {
-        return new Dollar(amount * multiplier, _currency);
-    }
 }
 

@@ -24,12 +24,12 @@ public class Money
     override public bool Equals(object obj)
     {
         Money money = (Money)obj;
-        return amount == money.amount && GetType().Equals(money.GetType());
+        return amount == money.amount && currency().Equals(money.currency());
     }
 
-    public virtual Money times(int multiplier)
+    public Money times(int multiplier)
     {
-        return null;
+        return new Money(amount * multiplier, _currency);
     }
 
     public string currency()
