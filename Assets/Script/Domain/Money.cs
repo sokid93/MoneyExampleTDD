@@ -1,6 +1,6 @@
 using System;
 
-public abstract class Money
+public class Money
 {
     protected int amount;
     protected string _currency;
@@ -27,7 +27,11 @@ public abstract class Money
         return amount == money.amount && GetType().Equals(money.GetType());
     }
 
-    public abstract Money times(int multiplier);
+    public virtual Money times(int multiplier)
+    {
+        return null;
+    }
+
     public string currency()
     {
         return _currency;

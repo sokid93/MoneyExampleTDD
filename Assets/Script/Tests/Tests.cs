@@ -38,4 +38,10 @@ public class Tests
         Assert.AreEqual("USD", Money.dollar(1).currency());
         Assert.AreEqual("CHF", Money.franc(1).currency());
     }
+
+    [Test]
+    public void TestDifferentClassEquality()
+    {
+        Assert.IsTrue(new Money(10, "CHF").Equals(new Franc(10, "CHF")));
+    }
 }
