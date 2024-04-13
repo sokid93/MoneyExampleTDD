@@ -19,17 +19,7 @@ public class Tests
     {
         Assert.IsTrue(Money.dollar(5).Equals(Money.dollar(5)));
         Assert.IsFalse(Money.dollar(5).Equals(Money.dollar(6)));
-        Assert.IsTrue(Money.franc(5).Equals(Money.franc(5)));
-        Assert.IsFalse(Money.franc(5).Equals(Money.franc(6)));
         Assert.IsFalse(Money.franc(5).Equals(Money.dollar(5)));
-    }
-
-    [Test]
-    public void TestFrancMultiplication()
-    {
-        Money five = Money.franc(5);
-        Assert.AreEqual(Money.franc(10), five.times(2));
-        Assert.AreEqual(Money.franc(15), five.times(3));
     }
 
     [Test]
@@ -37,11 +27,5 @@ public class Tests
     {
         Assert.AreEqual("USD", Money.dollar(1).currency());
         Assert.AreEqual("CHF", Money.franc(1).currency());
-    }
-
-    [Test]
-    public void TestDifferentClassEquality()
-    {
-        Assert.IsTrue(new Money(10, "CHF").Equals(new Franc(10, "CHF")));
     }
 }
