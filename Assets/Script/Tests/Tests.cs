@@ -34,5 +34,10 @@ public class Tests
     {
         Money sum = Money.dollar(5).plus(Money.dollar(5));
         Assert.AreEqual(Money.dollar(10), sum);
+        Money five = Money.dollar(5);
+        Expression sum = five.plus(five);
+        Bank bank = new Bank();
+        Money reduced = bank.reduce(sum, "USD");
+        Assert.AreEqual(Money.dollar(10), reduced);
     }
 }
