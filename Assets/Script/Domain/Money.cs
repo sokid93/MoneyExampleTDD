@@ -32,6 +32,11 @@ public class Money
         return new Money(amount * multiplier, _currency);
     }
 
+    public Money plus(Money addend)
+    {
+        return new Money(amount + addend.amount, _currency);
+    }
+
     public string currency()
     {
         return _currency;
