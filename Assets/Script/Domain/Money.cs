@@ -1,6 +1,6 @@
 using System;
 
-public class Money
+public class Money : Expression
 {
     protected int amount;
     protected string _currency;
@@ -32,7 +32,7 @@ public class Money
         return new Money(amount * multiplier, _currency);
     }
 
-    public Money plus(Money addend)
+    public Expression plus(Money addend)
     {
         return new Money(amount + addend.amount, _currency);
     }
