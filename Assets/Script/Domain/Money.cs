@@ -42,8 +42,9 @@ public class Money : Expression
         return _currency;
     }
 
-    public Money reduce(string to)
+    public Money reduce(Bank bank, string to)
     {
-        return this;
+        int rate = bank.rate(_currency, to);
+        return new Money(amount / rate, to);
     }
 }
