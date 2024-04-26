@@ -48,4 +48,13 @@ public class Tests
         Assert.AreEqual(five, sum.augend);
         Assert.AreEqual(five, sum.addend);
     }
+
+    [Test]
+    public void TestReduceSum()
+    {
+        Expression sum = new Sum(Money.dollar(3), Money.dollar(4));
+        Bank bank = new Bank();
+        Money result = bank.reduce(sum, "USD");
+        Assert.AreEqual(Money.dollar(7), result);
+    }
 }
