@@ -57,4 +57,12 @@ public class Tests
         Money result = bank.reduce(sum, "USD");
         Assert.AreEqual(Money.dollar(7), result);
     }
+
+    [Test]
+    public void TestReduceMoney()
+    {
+        Bank bank = new Bank();
+        Money result = bank.reduce(Money.dollar(1), "USD");
+        Assert.AreEqual(Money.dollar(1), result);
+    }
 }
