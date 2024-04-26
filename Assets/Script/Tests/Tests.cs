@@ -65,4 +65,13 @@ public class Tests
         Money result = bank.reduce(Money.dollar(1), "USD");
         Assert.AreEqual(Money.dollar(1), result);
     }
+
+    [Test]
+    public void TestReduceMoneyDifferentCurrency()
+    {
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money result = bank.reduce(Money.franc(2), "USD");
+        Assert.AreEqual(Money.dollar(1), result);
+    }
 }
