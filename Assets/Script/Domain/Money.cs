@@ -2,8 +2,8 @@ using System;
 
 public class Money : Expression
 {
-    protected int amount;
-    protected string _currency;
+    public int amount;
+    public string _currency;
 
     public Money(int amount, string currency)
     {

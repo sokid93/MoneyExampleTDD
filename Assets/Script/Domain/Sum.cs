@@ -8,4 +8,10 @@ public class Sum : Expression
         this.augend = augend;
         this.addend = addend;
     }
+
+    public Money reduce(string to)
+    {
+        int amount = augend.amount + addend.amount;
+        return new Money(amount, to);
+    }
 }
