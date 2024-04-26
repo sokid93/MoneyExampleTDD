@@ -38,4 +38,14 @@ public class Tests
         Money reduced = bank.reduce(sum, "USD");
         Assert.AreEqual(Money.dollar(10), reduced);
     }
+
+    [Test]
+    public void TestPlusRetunsSum()
+    {
+        Money five = Money.dollar(5);
+        Expression result = five.plus(five);
+        Sum sum = (Sum)result;
+        Assert.AreEqual(five, sum.augend);
+        Assert.AreEqual(five, sum.addend);
+    }
 }
