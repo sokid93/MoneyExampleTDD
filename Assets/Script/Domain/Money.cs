@@ -41,4 +41,9 @@ public class Money : Expression
     {
         return _currency;
     }
+
+    public Money reduce(string to)
+    {
+        return this;
+    }
 }
