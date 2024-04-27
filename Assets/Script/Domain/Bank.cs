@@ -10,6 +10,8 @@ public class Bank
 
     public int rate(string from, string to)
     {
+        if (from.Equals(to))
+            return 1;
         int rate = (int) rates[new Pair(from, to)];
         return rate;
     }
