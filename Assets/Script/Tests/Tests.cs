@@ -91,4 +91,16 @@ public class Tests
         Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
         Assert.AreEqual(Money.dollar(10), result);
     }
+
+    [Test]
+    public void TestSumPlusMoney()
+    {
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Expression sum = new Sum(fiveBucks, tenFrancs).plus(fiveBucks);
+        Money result = bank.reduce(sum, "USD");
+        Assert.AreEqual(Money.dollar(15), result);
+    }
 }
