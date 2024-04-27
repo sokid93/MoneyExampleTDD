@@ -74,4 +74,10 @@ public class Tests
         Money result = bank.reduce(Money.franc(2), "USD");
         Assert.AreEqual(Money.dollar(1), result);
     }
+
+    [Test]
+    public void TestIdentityRate()
+    {
+        Assert.AreEqual(1, new Bank().rate("USD", "USD"));
+    }
 }
